@@ -109,3 +109,73 @@
 - **_`func main() {`_**
   - **_`nonPackageLevelVar := 0`_**
 - **_`}`_**
+
+## Conversions
+
+**_10.What is the problem with the following block of code? How to fix it?_**
+- **_`func main() {`_**
+  - **_`var x float32 = 13.5`_**
+  - **_`var y int`_**
+  - **_`y = x`_**
+- **_`}`_**
+
+- Go (Golang) does not support implicit type conversion
+
+**_11.Demonstrate type conversion_**
+
+- **_`package main`_**
+
+- **_`import "fmt"`_**
+
+- **_`func main() {`_**
+  - **_`var x int = 2`_**
+  - **_`fmt.Println(x)`_**
+  - **_`var y float32 = float32(x)`_**
+  - **_`fmt.Println(y)`_**
+- **_`}`_**
+
+- In Go (Golang), type conversion is the process of converting a value of one data type into another.
+  
+**_12.The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?_**
+
+- **_`package main`_**
+
+- **_`import "fmt"`_**
+
+- **_`func main() {`_**
+  - **_`var x int = 101`_**
+  - **_`var y string`_**
+  - **_`y = string(x)`_**
+  - **_`fmt.Println(y)`_**
+- **_`}`_**
+
+- It looks what unicode value is set at 101 and uses it for converting the integer to a string. If you want to get "101" you should use the package "strconv" and replace `y = string(x)` with `y = strconv.Itoa(x)`
+
+## Integers
+
+**_13.What is the result of the following program?_**
+
+- **_`package main`_**
+ 
+- **_`import "fmt"`_**
+ 
+- **_`func main() {`_**
+  - **_`var x uint`_**
+  - **_`x = -3`_**
+  - **_`fmt.Println(x)`_**
+- **_`}`_**
+
+- Error. When `x` is declared as `uint` it means you can't put any negative values. But because we did put a negative value (`-3`) it will fail to compile it.
+
+**_14.How to print a random integer between 0 and 10?_**
+
+- `package main`
+
+- `import (`
+  - `"fmt"`
+  - `"math/rand"`
+- `)`
+
+- `func main() {`
+  - `fmt.Println("A random integer:", rand.Intn(10))`
+- `}`
