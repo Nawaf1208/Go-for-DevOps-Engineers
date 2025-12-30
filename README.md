@@ -179,3 +179,63 @@
 - `func main() {`
   - `fmt.Println("A random integer:", rand.Intn(10))`
 - `}`
+
+## Constants
+
+**_15.Demonstrate decelaration of constants in the following forms:_**
+- **_Single constant_**
+- **_Multiple constants in one block_**
+
+- ### Single constant
+- `const x int = 2732`
+
+- ### Multiple constants in one block
+- `const (`
+  - `y = 2017`
+  - `z = 2022`
+- `)`
+
+**_16.What is wrong with the following code?:_**
+- **_`package main
+
+- **_`func main() {`_**
+  - **_`var x int = 2`_**
+  - **_`var y int = 3`_**
+  - **_`const someConst = x + y`_**
+- **_`}`_**
+
+- Constants in Go can only be declared using constant expressions. But `x`, `y` are variables hence, their sum is variable.
+- `const initializer x + y is not a constant`
+
+**_17.What will be the result of executing the following code?_**
+- **_`package main`_**
+
+- **_`import "fmt"`_**
+
+- **_`func main() {`_**
+  - **_`const X := 2`_**
+  - **_`fmt.Print(X)`_**
+- **_`}`_**
+
+- It won't run. Constants cannot be declared using `:=`.
+
+**_18.What will be the result of executing the following code?_**
+
+- **_`package main`_**
+
+- **_`import "fmt"`_**
+
+- **_`const (`_**
+  - **_`Const1 = 1`_**
+  - **_`Const2 = 1 < 2`_**
+  - **_`Const3 = 1 << 10`_**                            
+- **_`)`_**
+
+- **_`func main() {`_**
+  - **_`fmt.Println(Const1)`_**
+  - **_`fmt.Println(Const2)`_**
+  - **_`fmt.Println(Const3)`_**
+- **_`}`_**
+
+- 1 true 1024
+- The 1024 result is because we shifted a 1 bit left 10 places.
