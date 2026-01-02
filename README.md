@@ -239,3 +239,43 @@
 
 - 1 true 1024
 - The 1024 result is because we shifted a 1 bit left 10 places.
+
+## Logical Operators
+
+**_19.What is the output of the following code?_**
+
+- **_`package main`_**
+
+- **_`import "fmt"`_**
+
+- **_`func main() {`_**
+  - **_`x := 2017`_**
+
+  - **_`fmt.Println(x > 2022 && x < 3000)`_**
+  - **_`fmt.Println(x > 2000 && x < 3000)`_**
+  - **_`fmt.Println(x > 2000 && x&2 == 0)`_**          
+- **_`}`_**
+
+- false
+- true
+- false
+
+**_20.What is the output of the following code?_**
+
+- **_`package main`_**
+        
+- **_`import "fmt"`_**
+        
+- **_`func main() {`_**
+  - **_`x := true`_**
+
+  - **_`fmt.Println(x)`_**
+  - **_`fmt.Println(!x)`_**
+  - **_`fmt.Println(!x && x)`_**
+  - **_`fmt.Println(!x || x)`_**               
+- **_`}`_**
+
+- true
+- false
+false
+true
