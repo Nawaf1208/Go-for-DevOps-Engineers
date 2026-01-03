@@ -277,5 +277,100 @@
 
 - true
 - false
-false
-true
+- false
+- true
+
+## Strings
+
+**_21.Define a variable with the string value of "Hello, World"_**
+
+- `var some_string := "Hello, World"`
+
+**_22.Define a variable that when printed will give this output:_**
+- **_`Hello,`_**
+- **_`World`_**
+
+- `var some_string := "Hello,\nWorld"`
+
+**_23.How to print "Hello,\nWorld"?_**
+
+- `package main`
+
+- `import "fmt"`
+        
+- `func main() {`
+  - `some_string := Hello,\nWorld`
+
+  - `fmt.Println(some_string)`
+- `}`
+
+**_24.What would be the output of the following code?_**
+- **_`package main
+ 
+- **_`import "fmt"`_**
+ 
+- **_`func main() {`_**
+  - **_`some_string := "There"`_**
+                              
+  - **_`fmt.Println("Hello", some_string)`_**
+- **_`}`_**
+
+- Hello There
+
+**_25.How to print the length of a character in Go?_**
+
+- `package main`                         
+
+- `import "fmt"`
+
+- `func main() {`
+  - `str := "Hello, world!"`
+  - `fmt.Println(len(str))`
+- `}`
+
+**_26.What would be the output of the following code? Why?_**
+- **_`var str string = "cowabunga"`_**
+- **_`fmt.Println(str[3])`_**
+
+- 97 Because it prints the ascii code of 'a' which is 97.
+
+**_27.Assuming `var str string = "cowabunga"`, What would be the output of the following lines?_**
+- **_`fmt.Println(str[3:5])`_**
+
+- 'ab'
+
+**_28.How to check if a string variable contains the string "ob1"?_**
+
+- `package main`
+
+- `import (`
+  - `"fmt"`
+  - `"strings"`
+- `)`
+
+- `func main() {`
+  - `str := "Hello, this is ob1 example"`
+  - `substring := "ob1"`
+
+  - `if strings.Contains(str, substring) {`
+    - `fmt.Println("String contains 'ob1'")`
+  - `} else {`
+    - `fmt.Println("String does not contain 'ob1'")`
+  - `}`
+- `}`
+
+**_29.How to turn the string "Hi There" to "hi there" with the `strings` package?_**
+
+- `package main`
+
+- `import (`
+  - `"fmt"`
+  - `"strings"`
+- `)`
+
+- `func main() {`
+  - `original := "Hi There"`
+  - `lowercase := strings.ToLower(original)`
+  - `fmt.Println(lowercase)`
+- `}`
+
