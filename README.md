@@ -374,3 +374,41 @@
   - `fmt.Println(lowercase)`
 - `}`
 
+## Conditionals
+
+**_30.Define a variable with value of 5. Write a conditional to check if the value of the variable is bigger than 0 and if it is, print "It's bigger than 0!"_**
+
+- `x := 5`
+- `if x > 0 {`
+  - `fmt.Print("It's bigger than  0!")`
+- `}`
+
+**_31.Define a variable with a random value. If its value bigger than 10 print "yay!". If it's smaller than 10, print "nay!"_**
+
+- `rand.Seed(time.Now().UnixNano())`
+- `var x int = rand.Intn(100)`
+- `if x > 10 {`
+  - `fmt.Print("yay!")`
+- `} else {`
+  - fmt.Print("nay!")`
+- `}`
+
+**_32.What the following code does?_**
+- **_`package main`_**
+  
+- **_`import (`_**
+  - **_`"fmt"`_**
+  - **_`"math/rand"`_**
+  - **_`"time"`_**
+- **_`)`_**
+
+- **_`func main() {`_**
+  - **_`rand.Seed(time.Now().UnixNano())`_**
+  - **_`if randNum := rand.Intn(100); randNum%2 == 0 {`_**
+    - **_`fmt.Print("Bingo!")`_**
+  - **_`} else {`_**
+    - **_`fmt.Print(randNum)`_**
+  - **_`}`_**       
+- **_`}`_**
+
+- Defines a variable with random value between 0 and 100. If the random value is even, prints "Bingo!" otherwise, prints the random value itself.
