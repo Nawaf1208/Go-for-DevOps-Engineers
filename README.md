@@ -412,3 +412,28 @@
 - **_`}`_**
 
 - Defines a variable with random value between 0 and 100. If the random value is even, prints "Bingo!" otherwise, prints the random value itself.
+
+## Switch
+
+**_33.Write a switch case to check what day of the week it is. If Sunday print "Here we go". If Monday print "We have just started". For any other day print the day._**
+
+- `package main`
+
+- `import (`
+  - `"fmt"`
+  - `"time"`
+- `)`
+
+- `func main() {`
+
+  - `today := time.Now().Weekday().String()`
+
+  - `switch today {`
+  - `case "Sunday":`
+    - `fmt.Println("Here we go")`
+  - `case "Monday":`
+    - `fmt.Println("We have just started")`
+  - `default:`
+    - `fmt.Println(today)`
+	- `}`
+- `}`
