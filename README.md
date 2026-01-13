@@ -196,7 +196,7 @@
 - `)`
 
 **_16.What is wrong with the following code?:_**
-- **_`package main
+- **_`package main`_**
 
 - **_`func main() {`_**
   - **_`var x int = 2`_**
