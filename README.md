@@ -437,3 +437,28 @@
     - `fmt.Println(today)`
 	- `}`
 - `}`
+
+## User Input
+
+**_34.Fix the following program to get an input from the user regarding his name and print it
+var name string_**
+
+- **_`fmt.Scan(name)`_**
+
+- **_`fmt.Println(name)`_**
+
+- - **_`fmt.Println(name)`_**
+ 
+- `fmt.Scan(name)` changes to `fmt.Scan(&name)`
+
+**_35.Why when asking for user input, we have to specify &?_**
+
+- Because we want to reference the memory address of the variable, this is where the user input will be stored.
+
+**_36.What do we print here?_**
+- **_`var age int = 3`_**
+
+- **_`fmt.Println(age)`_**
+- **_`fmt.Println(&age)`_**
+
+- The value of `age` variable and then the memory location of `age` variable
