@@ -6,7 +6,11 @@
 
 ## Go 101
 
-**_1.What are some characteristics of the Go programming language?_**
+<details>
+<summary><b><i>1.What are some characteristics of the Go programming language?</i></b>
+</summary>
+
+<br>
 
 - Strong and static typing - the type of the variables can't be changed over time and they have to be defined at compile time
 - Simplicity
@@ -16,13 +20,27 @@
 - Platform independent
 - Compile to standalone binary - anything you need to run your app will be compiled into one binary. Very useful for version management in run-time.
 
-**_2.True or False? Go is a compiled, statically typed language_**
+</details>
 
-- True
+<details>
+<summary><b><i>2.True or False? Go is a compiled, statically typed language</i></b>
+</summary>
 
-**_3.Why some functions and packages in Go begin with a Capital letter?_**
+<br>
 
-- Any exported variable, function, ... begins with a capital letter. In fact when using a package, you can use only the things the package exports for you and others to use.
+True
+
+</details>
+
+<details>
+<summary><b><i>3.Why some functions and packages in Go begin with a Capital letter?</i></b>
+</summary>
+
+<br>
+
+Any exported variable, function, ... begins with a capital letter. In fact when using a package, you can use only the things the package exports for you and others to use.
+
+</details>
 
 ## Variables & Data Types
 
