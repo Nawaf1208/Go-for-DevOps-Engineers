@@ -10,7 +10,7 @@
 <summary><b><i>1.What are some characteristics of the Go programming language?</i></b>
 </summary>
 
-<br>
+$\color{green}{\text{Answer}}$
 
 - Strong and static typing - the type of the variables can't be changed over time and they have to be defined at compile time
 - Simplicity
@@ -26,7 +26,7 @@
 <summary><b><i>2.True or False? Go is a compiled, statically typed language</i></b>
 </summary>
 
-<br>
+$\color{green}{\text{Answer}}$
 
 True
 
@@ -36,7 +36,7 @@ True
 <summary><b><i>3.Why some functions and packages in Go begin with a Capital letter?</i></b>
 </summary>
 
-<br>
+$\color{green}{\text{Answer}}$
 
 Any exported variable, function, ... begins with a capital letter. In fact when using a package, you can use only the things the package exports for you and others to use.
 
@@ -468,6 +468,8 @@ fmt.Println(name)
 ```
 </summary>
 
+$\color{green}{\text{Answer}}$
+
 `fmt.Scan(name)` changes to `fmt.Scan(&name)`
 </details>
 
@@ -475,7 +477,8 @@ fmt.Println(name)
 <summary><b><i>35.Why when asking for user input, we have to specify &?</i></b>
 </summary>
 
-<br>
+$\color{green}{\text{Answer}}$
+
 Because we want to reference the memory address of the variable, this is where the user input will be stored.
 
 </details>
@@ -488,6 +491,8 @@ var age int = 3
 ```
 
 </summary>
+
+$\color{green}{\text{Answer}}$
 	
 ```Go
 fmt.Println(age)
@@ -504,6 +509,8 @@ The value of `age` variable and then the memory location of `age` variable
 <summary><b><i>37.Define an array of integers of size 4 without value (no items).</i></b>
 </summary>
 
+$\color{green}{\text{Answer}}$
+
 ```Go
 var x [4]int
 ```
@@ -513,6 +520,8 @@ var x [4]int
 <details>
 <summary><b><i>38.Define an array of the following colors: red, green and blue.</i></b>
 </summary>
+
+$\color{green}{\text{Answer}}$
 
 ```Go
 var rgb = [3]string{"red", "green", "blue"}
