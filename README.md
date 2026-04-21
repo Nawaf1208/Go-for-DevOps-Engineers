@@ -440,25 +440,64 @@
 
 ## User Input
 
-**_34.Fix the following program to get an input from the user regarding his name and print it
-var name string_**
+<details> 
+<summary><b><i>34.Fix the following program to get an input from the user regarding his name and print it var name string</i></b>
 
-- **_`fmt.Scan(name)`_**
+```Go
+fmt.Scan(name)
+fmt.Println(name)
+	fmt.Println(name)
+```
+</summary>
 
-- **_`fmt.Println(name)`_**
+`fmt.Scan(name)` changes to `fmt.Scan(&name)`
+</details>
 
-- - **_`fmt.Println(name)`_**
- 
-- `fmt.Scan(name)` changes to `fmt.Scan(&name)`
+<details> 
+<summary><b><i>35.Why when asking for user input, we have to specify &?</i></b>
+</summary>
 
-**_35.Why when asking for user input, we have to specify &?_**
+<br>
+Because we want to reference the memory address of the variable, this is where the user input will be stored.
 
-- Because we want to reference the memory address of the variable, this is where the user input will be stored.
+</details>
 
-**_36.What do we print here?_**
-- **_`var age int = 3`_**
+<details> 
+<summary><b><i>36.What do we print here?</i></b>
+	
+```Go
+var age int = 3
+```
 
-- **_`fmt.Println(age)`_**
-- **_`fmt.Println(&age)`_**
+</summary>
+	
+```Go
+fmt.Println(age)
+fmt.Println(&age)
+```
 
-- The value of `age` variable and then the memory location of `age` variable
+The value of `age` variable and then the memory location of `age` variable
+
+</details>
+
+## Arrays & Slices
+
+<details> 
+<summary><b><i>37.Define an array of integers of size 4 without value (no items).</i></b>
+</summary>
+
+```Go
+var x [4]int
+```
+	
+</details>
+
+<details>
+<summary><b><i>38.Define an array of the following colors: red, green and blue.</i></b>
+</summary>
+
+```Go
+var rgb = [3]string{"red", "green", "blue"}
+```
+	
+</details>
