@@ -44,57 +44,94 @@ Any exported variable, function, ... begins with a capital letter. In fact when 
 
 ## Variables & Data Types
 
-**_4.Demonstrate short and regular variable declaration_**
+<details>
+<summary><b><i>4.Demonstrate short and regular variable declaration</i></b></summary>
 
-- `package main`
+$\color{green}{\text{Answer}}$
 
-- `import "fmt"`
+```Go
+  package main
 
-- `func main() {`
-  - `x := 2`
-  - `var y int = 2`
+  import "fmt"
 
-  - `fmt.Printf("x: %v. y: %v", x, y)`
-- `}`
+  func main() {
+  	x := 2
+  	var y int = 2
 
-**_5.True or False?_**
-- **_In Go we can redeclare variables_** -> False
-- **_Once a variable declared, we must use it_** -> True
+  	fmt.Printf("x: %v. y: %v", x, y)
+  }
+```
 
-**_6.What is the result of the following program?_**
-- **_`package main`_**
+</details>
 
-- **_`import "fmt"`_**
+<details>
+<summary><b><i>5.True or False?</i></b></summary>
 
-- **_`func main() {`_**
-  - **_`var userName`_**
-  - **_`userName = "user"`_**
-  - **_`fmt.Println(userName)`_**
-- **_`}`_**
+$\color{green}{\text{Answer}}$
+
+- <b><i>In Go we can redeclare variables</i></b> -> False
+- <b><i>Once a variable declared, we must use it</i></b> -> True
+
+</details>
+
+<details>
+<summary><b><i>6.What is the result of the following program?</i></b>
+	
+```Go
+package main
+
+import "fmt"
+
+func main() {
+	var userName
+	userName = "user"
+	fmt.Println(userName)
+}
+```
+</summary>
+
+$\color{green}{\text{Answer}}$
 
 - Error. The type userName is not defined. It has to be declared or the value assignment should happen at declaration.
 
 - So both `var userName = user` and `var userName string` are valid.
 
-**_6.What is the difference between `var x int = 2` and `x := 2`?_**
+</details>
+
+<details>
+<summary><b><i>6.What is the difference between `var x int = 2` and `x := 2`?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - The result is the same, a variable with the value 2.
 
 - With `var x int = 2` we are setting the variable type to integer, while with `x := 2` we are letting Go figure out by itself the type. The result is the same, both styles can't be used in every situation. For example, short declaration can't be used outside of a function.
 
-**_7.What would be the result of executing the following code:_**
-- **_`package main`_**
+</details>
 
-- **_`import "fmt"`_**
+<details>
+<summary><b><i>7.What would be the result of executing the following code:</i></b>
 
-- **_`x := 2`_**
+```Go
+package main
 
-- **_`func main() {`_**
-  - **_`x = 3`_**
-  - **_`fmt.Println(x)`_**
-- **_`}`_**
+import "fmt"
+
+x := 2
+
+func main() {
+	x = 3
+	fmt.Println(x)
+}
+```
+
+</summary>
+
+$\color{green}{\text{Answer}}$
 
 - It will fail with `expected declaration, found x` as outside of a function, every statement should start with a keyword (and short variable declarations won't work).
+
+</details>
 
 **_8.Demonstrate a block of variable declarations (at least 3 variables)_**
 
