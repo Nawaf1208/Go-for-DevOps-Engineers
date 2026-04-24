@@ -183,7 +183,7 @@ func main() {
 ## Conversions
 
 <details>
-<summary><b><i>10.What is the problem with the following block of code? How to fix it?</i></b></summary>
+<summary><b><i>10.What is the problem with the following block of code? How to fix it?
 	
 ```Go
 func main() {
@@ -192,6 +192,7 @@ func main() {
 	y = x
 }
 ```
+</i></b></summary>
 
 $\color{green}{\text{Answer}}$
 
