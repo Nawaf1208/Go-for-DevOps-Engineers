@@ -133,48 +133,71 @@ $\color{green}{\text{Answer}}$
 
 </details>
 
-**_8.Demonstrate a block of variable declarations (at least 3 variables)_**
+<details>
+<summary><b><i>8.Demonstrate a block of variable declarations (at least 3 variables)</i></b></summary>
 
-- **_`package main`_**
+$\color{green}{\text{Answer}}$
 
-- **_`import "fmt"`_**
+```Go
+package main
 
-- **_`var (`_**
-  - **_`x bool   = false`_**
-  - **_`y int    = 0`_**
-  - **_`z string = "false"`_**
-- **_`)`_**
+import "fmt"
 
-- **_`func main() {`_**
-  - **_`fmt.Printf("The type of x: %T. The value of x: %v\n", x, x)`_**
-  - **_`fmt.Printf("The type of y: %T. The value of y: %v\n", y, y)`_**
-  - **_`fmt.Printf("The type of z: %T. The value of z: %v\n", y, y)`_**
-- **_`}`_**
+var (
+	x bool = false
+	y int = 0
+	z string = "false"
+)
 
-**_9.What are package level variables? What would be the reason to use them?_**
+func main() {
+	fmt.Printf("The type of x: %T. The value of x: %v\n", x, x)
+	fmt.Printf("The type of y: %T. The value of y: %v\n", y, y)
+  	fmt.Printf("The type of z: %T. The value of z: %v\n", y, y)
+}
+
+```
+
+</details>
+
+<details>
+<summary><b><i>9.What are package level variables? What would be the reason to use them?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - Package level variables are variables that defined at the package level instead of a specific function (like main for example).
 
 - If you have multiple functions in your package that use the same variables, it might make these variables available to the functions by defining them at the package level. This can be in the same file or any file under the same package. For example:
 
-- **_`package main`_**
+```Go
+package main
 
-- **_`var packageLevelVar int = 0`_** 
+var packageLevelVar int = 0 
 
-- **_`func main() {`_**
-  - **_`nonPackageLevelVar := 0`_**
-- **_`}`_**
+func main() {
+	nonPackageLevelVar := 0
+}
+```
+
+</details>
 
 ## Conversions
 
-**_10.What is the problem with the following block of code? How to fix it?_**
-- **_`func main() {`_**
-  - **_`var x float32 = 13.5`_**
-  - **_`var y int`_**
-  - **_`y = x`_**
-- **_`}`_**
+<details>
+<summary><b><i>10.What is the problem with the following block of code? How to fix it?</i></b></summary>
+	
+```Go
+func main() {
+	var x float32 = 13.5
+	var y int
+	y = x
+}
+```
+
+$\color{green}{\text{Answer}}$
 
 - Go (Golang) does not support implicit type conversion
+
+</details>
 
 **_11.Demonstrate type conversion_**
 
