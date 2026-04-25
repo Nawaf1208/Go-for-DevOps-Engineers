@@ -200,201 +200,336 @@ $\color{green}{\text{Answer}}$
 
 </details>
 
-**_11.Demonstrate type conversion_**
+<details>
+<summary><b><i>11.Demonstrate type conversion
 
-- **_`package main`_**
+```Go
+package main`_**
 
-- **_`import "fmt"`_**
+import "fmt"
 
-- **_`func main() {`_**
-  - **_`var x int = 2`_**
-  - **_`fmt.Println(x)`_**
-  - **_`var y float32 = float32(x)`_**
-  - **_`fmt.Println(y)`_**
-- **_`}`_**
+func main() {
+	var x int = 2
+	fmt.Println(x)
+  	var y float32 = float32(x)
+  	fmt.Println(y)
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - In Go (Golang), type conversion is the process of converting a value of one data type into another.
-  
-**_12.The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?_**
 
-- **_`package main`_**
+</details>
 
-- **_`import "fmt"`_**
+<details>
+<summary><b><i>12.The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?
 
-- **_`func main() {`_**
-  - **_`var x int = 101`_**
-  - **_`var y string`_**
-  - **_`y = string(x)`_**
-  - **_`fmt.Println(y)`_**
-- **_`}`_**
+```Go
+package main
+
+import "fmt"
+
+func main() {
+	var x int = 101
+  	var y string
+  	y = string(x)
+  	fmt.Println(y)
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - It looks what unicode value is set at 101 and uses it for converting the integer to a string. If you want to get "101" you should use the package "strconv" and replace `y = string(x)` with `y = strconv.Itoa(x)`
 
+</details>
+
 ## Integers
 
-**_13.What is the result of the following program?_**
+<details>
+<summary><b><i>13.What is the result of the following program?
 
-- **_`package main`_**
+```Go
+package main
  
-- **_`import "fmt"`_**
- 
-- **_`func main() {`_**
-  - **_`var x uint`_**
-  - **_`x = -3`_**
-  - **_`fmt.Println(x)`_**
-- **_`}`_**
+import "fmt"
+
+func main() {
+	var x uint
+	x = -3
+  	fmt.Println(x)
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - Error. When `x` is declared as `uint` it means you can't put any negative values. But because we did put a negative value (`-3`) it will fail to compile it.
 
-**_14.How to print a random integer between 0 and 10?_**
+</details>
 
-- `package main`
+<details>
+<summary><b><i>14.How to print a random integer between 0 and 10?</i></b></summary>
 
-- `import (`
-  - `"fmt"`
-  - `"math/rand"`
-- `)`
+$\color{green}{\text{Answer}}$
 
-- `func main() {`
-  - `fmt.Println("A random integer:", rand.Intn(10))`
-- `}`
+```Go
+package main
+
+import (
+	"fmt"
+  	"math/rand"
+)
+
+func main() {
+	fmt.Println("A random integer:", rand.Intn(10))
+}
+```
+
+</details>
 
 ## Constants
 
-**_15.Demonstrate decelaration of constants in the following forms:_**
-- **_Single constant_**
-- **_Multiple constants in one block_**
+<details>
+<summary><b><i>15.Demonstrate decelaration of constants in the following forms:
+
+- Single constant
+- Multiple constants in one block
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - ### Single constant
-- `const x int = 2732`
+```Go
+const x int = 2732
+```
 
 - ### Multiple constants in one block
-- `const (`
-  - `y = 2017`
-  - `z = 2022`
-- `)`
+```Go
+const (
+	y = 2017
+  	z = 2022
+)
+```
 
-**_16.What is wrong with the following code?:_**
-- **_`package main`_**
+</details>
 
-- **_`func main() {`_**
-  - **_`var x int = 2`_**
-  - **_`var y int = 3`_**
-  - **_`const someConst = x + y`_**
-- **_`}`_**
+<details>
+<summary><b><i>16.What is wrong with the following code?
+
+```Go
+package main
+
+func main() {
+	var x int = 2
+	var y int = 3
+  	const someConst = x + y
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - Constants in Go can only be declared using constant expressions. But `x`, `y` are variables hence, their sum is variable.
 - `const initializer x + y is not a constant`
 
-**_17.What will be the result of executing the following code?_**
-- **_`package main`_**
+</details>
 
-- **_`import "fmt"`_**
+<details>
+<summary><b><i>17.What will be the result of executing the following code?
 
-- **_`func main() {`_**
-  - **_`const X := 2`_**
-  - **_`fmt.Print(X)`_**
-- **_`}`_**
+```Go
+package main
+
+import "fmt"
+
+func main() {
+	const X := 2
+	fmt.Print(X)
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - It won't run. Constants cannot be declared using `:=`.
 
-**_18.What will be the result of executing the following code?_**
+</details>
 
-- **_`package main`_**
+<details>
+<summary><b><i>18.What will be the result of executing the following code?
 
-- **_`import "fmt"`_**
+```Go
+package main
 
-- **_`const (`_**
-  - **_`Const1 = 1`_**
-  - **_`Const2 = 1 < 2`_**
-  - **_`Const3 = 1 << 10`_**                            
-- **_`)`_**
+import "fmt"
 
-- **_`func main() {`_**
-  - **_`fmt.Println(Const1)`_**
-  - **_`fmt.Println(Const2)`_**
-  - **_`fmt.Println(Const3)`_**
-- **_`}`_**
+const (
+	Const1 = 1
+  	Const2 = 1 < 2
+  	Const3 = 1 << 10                           
+)
+
+func main() {
+	fmt.Println(Const1)
+  	fmt.Println(Const2)
+  	fmt.Println(Const3)
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - 1 true 1024
 - The 1024 result is because we shifted a 1 bit left 10 places.
 
+</details>
+
 ## Logical Operators
 
-**_19.What is the output of the following code?_**
+<details>
+<summary><b><i>19.What is the output of the following code?
 
-- **_`package main`_**
+```Go
+package main
 
-- **_`import "fmt"`_**
+import "fmt"
 
-- **_`func main() {`_**
-  - **_`x := 2017`_**
+func main() {
 
-  - **_`fmt.Println(x > 2022 && x < 3000)`_**
-  - **_`fmt.Println(x > 2000 && x < 3000)`_**
-  - **_`fmt.Println(x > 2000 && x&2 == 0)`_**          
-- **_`}`_**
+x := 2017
+
+	fmt.Println(x > 2022 && x < 3000)
+  	fmt.Println(x > 2000 && x < 3000)
+  	fmt.Println(x > 2000 && x&2 == 0)         
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - false
 - true
 - false
 
-**_20.What is the output of the following code?_**
+</details>
 
-- **_`package main`_**
+<details>
+<summary><b><i>20.What is the output of the following code?
+
+```Go
+package main
         
-- **_`import "fmt"`_**
+import "fmt"
         
-- **_`func main() {`_**
-  - **_`x := true`_**
+func main() {
+	x := true
 
-  - **_`fmt.Println(x)`_**
-  - **_`fmt.Println(!x)`_**
-  - **_`fmt.Println(!x && x)`_**
-  - **_`fmt.Println(!x || x)`_**               
-- **_`}`_**
+	fmt.Println(x)
+  	fmt.Println(!x)
+  	fmt.Println(!x && x)
+  	fmt.Println(!x || x)               
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
 
 - true
 - false
 - false
 - true
+
+</details>
 
 ## Strings
 
-**_21.Define a variable with the string value of "Hello, World"_**
+<details>
+<summary><b><i>21.Define a variable with the string value of "Hello, World"</i></b></summary>
 
-- `var some_string := "Hello, World"`
+$\color{green}{\text{Answer}}$
 
-**_22.Define a variable that when printed will give this output:_**
-- **_`Hello,`_**
-- **_`World`_**
+```Go
+var some_string := "Hello, World"
+```
 
-- `var some_string := "Hello,\nWorld"`
+</details>
 
-**_23.How to print "Hello,\nWorld"?_**
+<details>
+<summary><b><i>22.Define a variable that when printed will give this output:
+	
+```Go
+Hello,
+```
+  
+```Go
+World
+```
 
-- `package main`
+</i></b></summary>
 
-- `import "fmt"`
+$\color{green}{\text{Answer}}$
+
+```Go
+var some_string := "Hello,\nWorld"
+```
+
+</details>
+
+<details>
+<summary><b><i>23.How to print "Hello,\nWorld"?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+package main
+
+import "fmt"
         
-- `func main() {`
-  - `some_string := Hello,\nWorld`
+func main() {
+	some_string := Hello,\nWorld
 
-  - `fmt.Println(some_string)`
-- `}`
+	fmt.Println(some_string)
+}
+```
 
-**_24.What would be the output of the following code?_**
-- **_`package main
+</details>
+
+<details>
+<summary><b><i>24.What would be the output of the following code?
+
+```Go
+package main
  
-- **_`import "fmt"`_**
+import "fmt"
  
-- **_`func main() {`_**
-  - **_`some_string := "There"`_**
+func main() {
+	some_string := "There"
                               
-  - **_`fmt.Println("Hello", some_string)`_**
-- **_`}`_**
+	fmt.Println("Hello", some_string)
+}
+```
 
-- Hello There
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+Hello There
+```
+
+</details>
 
 **_25.How to print the length of a character in Go?_**
 
