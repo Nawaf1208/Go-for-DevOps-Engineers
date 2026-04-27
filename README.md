@@ -531,126 +531,194 @@ Hello There
 
 </details>
 
-**_25.How to print the length of a character in Go?_**
+<details>
+<summary><b><i>25.How to print the length of a character in Go?</i></b></summary>
 
-- `package main`                         
+$\color{green}{\text{Answer}}$
 
-- `import "fmt"`
+```Go
+package main                       
 
-- `func main() {`
-  - `str := "Hello, world!"`
-  - `fmt.Println(len(str))`
-- `}`
+import "fmt"
 
-**_26.What would be the output of the following code? Why?_**
-- **_`var str string = "cowabunga"`_**
-- **_`fmt.Println(str[3])`_**
+func main() {
+	str := "Hello, world!"
+  	fmt.Println(len(str))
+}
+```
 
-- 97 Because it prints the ascii code of 'a' which is 97.
+</details>
 
-**_27.Assuming `var str string = "cowabunga"`, What would be the output of the following lines?_**
-- **_`fmt.Println(str[3:5])`_**
+<details>
+<summary><b><i>26.What would be the output of the following code? Why?
+```Go
+var str string = "cowabunga"
+fmt.Println(str[3])`_**
+```
+</i></b></summary>
 
-- 'ab'
+$\color{green}{\text{Answer}}$
 
-**_28.How to check if a string variable contains the string "ob1"?_**
+97 Because it prints the ascii code of 'a' which is 97.
 
-- `package main`
+</details>
 
-- `import (`
-  - `"fmt"`
-  - `"strings"`
-- `)`
+<details>
+<summary><b><i>27.Assuming `var str string = "cowabunga"`, What would be the output of the following lines?
+```Go
+fmt.Println(str[3:5])
+```
+</i></b></summary>
 
-- `func main() {`
-  - `str := "Hello, this is ob1 example"`
-  - `substring := "ob1"`
+$\color{green}{\text{Answer}}$
 
-  - `if strings.Contains(str, substring) {`
-    - `fmt.Println("String contains 'ob1'")`
-  - `} else {`
-    - `fmt.Println("String does not contain 'ob1'")`
-  - `}`
-- `}`
+`ab`
 
-**_29.How to turn the string "Hi There" to "hi there" with the `strings` package?_**
+</details>
 
-- `package main`
+<details>
+<summary><b><i>28.How to check if a string variable contains the string "ob1"?</i></b></summary>
 
-- `import (`
-  - `"fmt"`
-  - `"strings"`
-- `)`
+$\color{green}{\text{Answer}}$
 
-- `func main() {`
-  - `original := "Hi There"`
-  - `lowercase := strings.ToLower(original)`
-  - `fmt.Println(lowercase)`
-- `}`
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "Hello, this is ob1 example"
+  	substring := "ob1"
+
+  	if strings.Contains(str, substring) {
+		fmt.Println("String contains 'ob1'")
+  	} else {
+    	fmt.Println("String does not contain 'ob1'")
+  	}
+}
+```
+
+</details>
+
+<details> 
+<summary><b><i>29.How to turn the string "Hi There" to "hi there" with the `strings` package?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+package main
+
+import (
+	"fmt"
+  	"strings"
+)
+
+func main() {
+	original := "Hi There"
+  	lowercase := strings.ToLower(original)
+  	fmt.Println(lowercase)
+}
+```
+
+</details>
 
 ## Conditionals
 
-**_30.Define a variable with value of 5. Write a conditional to check if the value of the variable is bigger than 0 and if it is, print "It's bigger than 0!"_**
+<details> 
+<summary><b><i>30.Define a variable with value of 5. Write a conditional to check if the value of the variable is bigger than 0 and if it is, print "It's bigger than 0!"</i></b></summary>
 
-- `x := 5`
-- `if x > 0 {`
-  - `fmt.Print("It's bigger than  0!")`
-- `}`
+$\color{green}{\text{Answer}}$
 
-**_31.Define a variable with a random value. If its value bigger than 10 print "yay!". If it's smaller than 10, print "nay!"_**
+```Go
+x := 5
+if x > 0 {
+	fmt.Print("It's bigger than  0!")
+}
+```
 
-- `rand.Seed(time.Now().UnixNano())`
-- `var x int = rand.Intn(100)`
-- `if x > 10 {`
-  - `fmt.Print("yay!")`
-- `} else {`
-  - fmt.Print("nay!")`
-- `}`
+</details>
 
-**_32.What the following code does?_**
-- **_`package main`_**
+<details> 
+<summary><b><i>31.Define a variable with a random value. If its value bigger than 10 print "yay!". If it's smaller than 10, print "nay!"</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+rand.Seed(time.Now().UnixNano())
+var x int = rand.Intn(100)
+if x > 10 {
+	fmt.Print("yay!")
+} else {
+  	fmt.Print("nay!")
+}
+```
+
+</details>
+
+<details> 
+<summary><b><i>32.What the following code does?
+	
+```Go
+package main
   
-- **_`import (`_**
-  - **_`"fmt"`_**
-  - **_`"math/rand"`_**
-  - **_`"time"`_**
-- **_`)`_**
+import (
+	"fmt"
+  	"math/rand"
+  	"time"
+)
 
-- **_`func main() {`_**
-  - **_`rand.Seed(time.Now().UnixNano())`_**
-  - **_`if randNum := rand.Intn(100); randNum%2 == 0 {`_**
-    - **_`fmt.Print("Bingo!")`_**
-  - **_`} else {`_**
-    - **_`fmt.Print(randNum)`_**
-  - **_`}`_**       
-- **_`}`_**
+func main() {
+	rand.Seed(time.Now().UnixNano())
+  	if randNum := rand.Intn(100); randNum%2 == 0 {
+    	fmt.Print("Bingo!")
+  	} else {
+    	fmt.Print(randNum)
+  	}
+}
+```
+  
+</i></b></summary>
 
-- Defines a variable with random value between 0 and 100. If the random value is even, prints "Bingo!" otherwise, prints the random value itself.
+$\color{green}{\text{Answer}}$
+
+Defines a variable with random value between 0 and 100. If the random value is even, prints "Bingo!" otherwise, prints the random value itself.
+
+</details>
 
 ## Switch
 
-**_33.Write a switch case to check what day of the week it is. If Sunday print "Here we go". If Monday print "We have just started". For any other day print the day._**
+<details> 
+<summary><b><i>33.Write a switch case to check what day of the week it is. If Sunday print "Here we go". If Monday print "We have just started". For any other day print the day.</i></b></summary>
 
-- `package main`
+$\color{green}{\text{Answer}}$
 
-- `import (`
-  - `"fmt"`
-  - `"time"`
-- `)`
+```Go
+package main
 
-- `func main() {`
+import (
+	"fmt"
+  	"time"
+)
 
-  - `today := time.Now().Weekday().String()`
+func main() {
 
-  - `switch today {`
-  - `case "Sunday":`
-    - `fmt.Println("Here we go")`
-  - `case "Monday":`
-    - `fmt.Println("We have just started")`
-  - `default:`
-    - `fmt.Println(today)`
-	- `}`
-- `}`
+	today := time.Now().Weekday().String()
+
+  	switch today {
+  	case "Sunday":
+		fmt.Println("Here we go")
+  	case "Monday":
+    	fmt.Println("We have just started")
+  	default:
+    	fmt.Println(today)
+	}
+}
+```
+
+</details>
 
 ## User Input
 
