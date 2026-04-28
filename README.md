@@ -792,3 +792,63 @@ var rgb = [3]string{"red", "green", "blue"}
 ```
 	
 </details>
+
+<details>
+<summary><b><i>39.You defined the following array and printed it. What was the output? 
+
+``` Go
+var numbers = [10]int{}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+[0 0 0 0 0 0 0 0 0 0]
+```
+
+</details>
+
+<details>
+<summary><b><i>40.Define an array of integers of size 10. All the values should be zeros except first one which should be 5 and the last one which should be 100.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+var arr = [10]int{5, 9: 100}
+```
+
+</details>
+
+<details>
+<summary><b><i>41.What would be the result of the following code?
+
+```Go
+var arr = [...]int{1, 2, 3, 4}
+var anotherArr = [4]int{1, 2, 3, 4}
+fmt.Println(arr == anotherArr)
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+The result of comparison is true.
+
+</details>
+
+<details>
+<summary><b><i>42.Assuming there is a defined array called 
+	
+```Go
+arr
+```
+
+Print its length.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+fmt.Println(len(arr))
+```
