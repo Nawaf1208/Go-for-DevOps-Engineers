@@ -852,3 +852,52 @@ $\color{green}{\text{Answer}}$
 ```Go
 fmt.Println(len(arr))
 ```
+
+</details>
+
+<details>
+<summary><b><i>43.True or False? An array of type [1]int is the same type as an array of [2]int.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+False. Go treats the array size as being part of the type itself. So [1]int type != [2]int type.
+
+</details>
+
+<details>
+<summary><b><i>44.True or False? If var x := 2, then var y [x]int is an array of size 2.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+False. It's not possible to use variable to define an array of certain size. As the size of an array is part of its type and types must be resolved at compile time, not runtime.
+
+</details>
+
+<details>
+<summary><b><i>45.Demonstrate defining the following slices:
+- without values (with nil)
+- with two values
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+var slice []
+```
+
+```Go
+int var slice = []int{1, 2}
+```
+
+</details>
+
+<details>
+<summary><b><i>46.Append to a slice called b the number 7.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+b = append(b, 7)
+```
+
+</details>
