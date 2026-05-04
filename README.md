@@ -901,3 +901,116 @@ b = append(b, 7)
 ```
 
 </details>
+
+<details>
+<summary><b><i>47.Given that 
+
+```Go
+var slice = []int{2, 0, 1, 7}
+```
+
+What would be the result of 
+
+```Go
+slice = append(slice, 2, 0, 2, 2)
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+[2 0 1 7 2 0 2 2]
+```
+
+</details>
+
+<details>
+<summary><b><i>48.How to compare two slices?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+package main
+
+import (
+    "fmt"
+    "reflect"
+)
+
+func main() {
+    x := []int {2, 0, 1, 7}
+    y := []int {2, 0, 2, 2}
+
+    fmt.Println(reflect.DeepEqual(x, y))
+}
+```
+
+</details>
+
+<details>
+<summary><b><i>49.Why in Go you need assign the value returned from append function as opposed of other programming languages like Python, where you don't need to do it?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+Because in Go when you pass a something to a function, it copies it. So when we append something to a slice it appends it to a copy of it. So in order to change the original slice, we need to assign the returned copy back into the original slice.
+
+</details>
+
+<details>
+<summary><b><i>50.How create a slice of capacity (not size) of 20?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+slice := make([]int, 20)
+```
+
+</details>
+
+<details>
+<summary><b><i>51.How create a slice of size 3 ad capacity of 10?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+slice := make([]int, 3, 20)
+```
+
+</details>
+
+<details>
+<summary><b><i>52.What's the use case for defining in advance the capacity of a slice?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+It's more efficent to set the size once for a slice rather than increase its capacity every times new items added to it.
+
+</details>
+
+<details>
+<summary><b><i>53.What's the value of slice after running the following code? Why?
+
+```Go
+slice := make([]int, 3)
+slice = append(slice, 41)
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+[0 0 0 41]
+```
+
+</details>
+
+<details>
+<summary><b><i>54.True or False? When specifying the capacity of a slice, it's always best to specify a capacity that is bigger than the slice size.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+True. Otherwise it will cause compile-time error or run-time error, depends on how you defined it.
+
+</details>
