@@ -1383,6 +1383,9 @@ func main() {
   fmt.Println(process(10))
 }
 ```
+
+</i></b></summary>
+
 $\color{green}{\text{Answer}}$
 
 10
@@ -1548,6 +1551,8 @@ func do_log(input string) {
 	log.Print(input)
 }
 ```
+
+</i></b></summary>
 
 $\color{green}{\text{Answer}}$
 
