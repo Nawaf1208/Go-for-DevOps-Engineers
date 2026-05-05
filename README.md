@@ -1509,7 +1509,7 @@ type C interface {
 }
 ```
 
-</summary>
+</details>
 
 <details>
 <summary><b><i>80.Why can we send both int and string to following function?
