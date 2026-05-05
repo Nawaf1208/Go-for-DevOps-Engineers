@@ -1276,6 +1276,8 @@ someMap := map[string]int{
 }
 ```
 
+</i></b></summary>
+
 $\color{green}{\text{Answer}}$
 
 ```Go
@@ -1287,7 +1289,7 @@ delete(someMap, "y")
 ## Functions
 
 <details>
-<summary><b><i>68.Define a function that prints "Hello World"</i></b></summary>
+<summary><b><i>68.Define a function that prints "Hello World".</i></b></summary>
 
 $\color{green}{\text{Answer}}$
 
