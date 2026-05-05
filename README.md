@@ -1014,3 +1014,149 @@ $\color{green}{\text{Answer}}$
 True. Otherwise it will cause compile-time error or run-time error, depends on how you defined it.
 
 </details>
+
+<details>
+<summary><b><i>55.Given 
+
+```Go
+slice := []int{1, 2, 3, 4, 5}
+```
+
+What would be the result of the following expressions:
+
+```Go
+slice[:]
+```
+
+```Go
+slice[2:]
+```
+
+```Go
+slice[:1]
+```
+
+```Go
+slice[2:4]
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+[1 2 3 4 5]
+```
+
+```Go
+[3 4 5]
+```
+
+```Go
+[1]
+```
+
+```Go
+[3 4]
+```
+
+</details>
+
+<details>
+<summary><b><i>56.What's the output of the following program?
+
+```Go
+slice := []int{1, 2, 3}
+anotherSlice := slice[1:]
+slice[1] = 999
+anotherslice[1] = 5
+fmt.Println("slice:", slice)
+fmt.Println("slice:", anotherSlice)
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+[10 999 3]
+[999 5]
+```
+
+The expalantion is that slicing a slice isn't creating a copy of the data but rather creates another variable that shares the very same memory.
+
+</details>
+
+<details>
+<summary><b><i>57.How to create an independant slice of a slice?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+When creating a slice of a slice, it will create variable that shares the same memory. To create a slice that is indepdant of the original slice, you can use the built-in function `copy`
+
+```Go
+slice := []int{1, 2, 3}
+destSlice = make([]int, 3)
+numOfElements := copy(slice, destSlice)
+```
+
+</details>
+
+## Loops
+
+<details>
+<summary><b><i>58.Define a simple for loop with following components:
+	
+- variable `i` initialized to 0
+- expression where the variable should be smaller than 50
+- at the end of each iteration the variable value should be incremented by 1
+- In the loop itself, the value of variable `i` should be added to a variable called `sum` (initialize the variable before the loop with value of 0)
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+sum := 0
+for i := 0; i < 50; i++ {
+    sum += i
+}
+```
+
+</details>
+
+<details>
+<summary><b><i>59.Implement infinite loop.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+for {
+    fmt.Print("forever!")
+}
+```
+
+</details>
+
+<details>
+<summary><b><i>60.What's the difference between the following two loops?
+
+```Go
+for {
+    fmt.Print("forever!")
+}
+```
+
+```Go
+for true {
+    fmt.Print("forever!")
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+From result perspective, there is no difference. Both are infinite loops.
+
+</details>
