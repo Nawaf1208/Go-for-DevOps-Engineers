@@ -1160,3 +1160,405 @@ $\color{green}{\text{Answer}}$
 From result perspective, there is no difference. Both are infinite loops.
 
 </details>
+
+## Maps
+
+<details>
+<summary><b><i>61.Define the following map variables:
+- an empty map where all keys are of string type, as well as the values
+- an empty map where all the keys are of string type and the values are of int type
+- A map with string type keys and int array values (non empty map, populate it with data)
+- Empty map with int type keys and string type values of size 100
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+var someMap = map[string]string
+```
+
+```Go
+anotherMap := map[string]int{}
+```
+
+```Go
+nonEmptyMap := map[string][]int{
+  "someKey": []int{1, 2, 3},
+  "anotherKey": []int{4, 5, 6},
+}
+```
+
+```Go
+someMap := make(map[int][]string, 100)
+```
+
+</details>
+
+<details>
+<summary><b><i>62.True or False? All keys in a single map, should have the same data type.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+True. This is also true for the all the values in a single map.
+
+</details>
+
+<details>
+<summary><b><i>63.How to check the number of key-value pairs in a map?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+len(someMap)
+```
+
+</details>
+
+<details>
+<summary><b><i>64.True or False? To compare maps, one can use "==" this way 
+	
+`someMap == anotherMap` 
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+False.
+
+</details>
+
+<details>
+<summary><b><i>65.What's the output of the following code?
+
+```Go
+someMap := map[string]int{}
+someMap["x"] = 41
+fmt.Println(someMap["y"])
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+0
+
+</details>
+
+<details>
+<summary><b><i>66.What's the output of the following code?
+
+```Go
+someMap := map[string]int{
+  "x": 41,
+}
+value, exists := someMap["x"]
+fmt.Println(value, exists)
+value, exists = someMap["y"]
+fmt.Println(value, exists)
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+41 true 0 false
+
+</details>
+
+<details>
+<summary><b><i>67.Remove from the following map the key-value pair of "y"
+
+```Go
+someMap := map[string]int{
+  "x": 41,
+  "y": 303,
+  "z": 56,
+}
+```
+
+$\color{green}{\text{Answer}}$
+
+```Go
+delete(someMap, "y")
+```
+
+</details>
+
+## Functions
+
+<details>
+<summary><b><i>68.Define a function that prints "Hello World"</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+func PrintHelloWorld() {
+    fmt.Println("Hello World")
+}
+```
+
+</details>
+
+<details>
+<summary><b><i>69.What the following code does?
+
+```Go
+func add(x int, y int) int {
+    return x + y
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+add is a function that takes two parameters (two integers) and returns their sum.
+
+</details>
+
+<details>
+<summary><b><i>70.Which of the following functions will work just fine?
+
+```Go
+func add(x int, y int) int {
+    return x + y
+}
+```
+
+```Go
+func add(x, y int) int {
+    return x + y
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+Both. If two or more parameters share the same type, you can specify it only once.
+
+</details>
+
+<details>
+<summary><b><i>71.True or False? A function in Go can return either zero or one values, but not more than that</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+False. A fucntion in Go can return multiple values
+
+</details>
+
+<details>
+<summary><b><i>72.Write code that will execute the following function in a valid way
+
+```Go
+func swap(x, y string) (string, string) {
+    return y, x
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+x, y = swap("and roll", "rock")
+fmt.Println(a, b)
+```
+
+</details>
+
+<details>
+<summary><b><i>73.What is the result of the following code?
+
+```Go
+func process(num int) (x int) {
+    x = num + 10
+    var z = num - x
+    x = z + x
+    return
+}
+
+func main() {
+  fmt.Println(process(10))
+}
+```
+$\color{green}{\text{Answer}}$
+
+10
+
+</details>
+
+## Defer
+
+<details>
+<summary><b><i>74.What will be the output of the following code? Why?
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    defer fmt.Println("1")
+
+    fmt.Println("2")
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+2
+1
+```
+
+2 is printed before 1 due to the defer statement. The `defer` statement defers the execution of the function (`fmt.Println("1")`) until the surrounding fucntion (which is `main()`) returns.
+
+</details>
+
+<details>
+<summary><b><i>75.True or False? The arguments of a deferred functions are evaluated but the function itself isn't called until the surrounding function returns.</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+True.
+
+</details>
+
+<details>
+<summary><b><i>76.What will be the output of the following code? Why?
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("100")
+
+    for i := 0; i < 10; i++ {
+      defer fmt.Println(i)
+    }
+
+    fmt.Println("200")
+  }
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+```Go
+100
+200
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+```
+
+Deferred functions are executed in a last-in-first-out order, this is why it prints it from 9 to 0 instead of from 0 to 9.
+
+</details>
+
+## Packages
+
+<details>
+<summary><b><i>77.How do you export a variable or a function in Go for other packages to use?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+Capitalize the first letter of what you would like to export.
+
+</details>
+
+<details>
+<summary><b><i>78.What are different levels of scope of variables?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+- Local
+- Package
+- Global
+
+</details>
+
+## Generics
+
+<details>
+<summary><b><i>79.How can you define your custom generic type in Golang?</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+By creating an interface.
+
+```Go
+package main
+
+type C interface {
+	int | int32 | string
+}
+```
+
+</summary>
+
+<details>
+<summary><b><i>80.Why can we send both int and string to following function?
+
+```Go
+package main
+
+import "fmt"
+
+type C interface {
+  int | int32 | string
+}
+
+func show[T C](input T) {
+	fmt.Println(input)
+}
+```
+
+</i></b></summary>
+
+$\color{green}{\text{Answer}}$
+
+Because we created show function as a generic function. Therefore it can get types that we have in C.
+
+</details>
+
+<details>
+<summary><b><i>81.Change this function to accept any type in Golang.
+
+```Go
+package main
+
+import "log"
+
+func do_log(input string) {
+	log.Print(input)
+}
+```
+
+$\color{green}{\text{Answer}}$
+
+```Go
+Use any keyword.
+
+package main
+
+import "log"
+
+func do_log(input any) {
+	log.Print(input)
+}
+```
